@@ -1,0 +1,10 @@
+{
+  "name": "frp",
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "component": "*",
+    "component-builder": "*",
+    "commander": "*"
+  }
+}

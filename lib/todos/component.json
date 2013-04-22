@@ -1,0 +1,6 @@
+{
+  "name": "todos",
+  "styles": ["todos.css"],
+  "images": ["bg.png"],
+  "files": ["index.html"]
+}

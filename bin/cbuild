@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var mkdir = require('mkdirp').sync
+var Path = require('path')
+var join = Path.join
+var fs = require('fs')
+var write = fs.writeFileSync
+var exists = fs.existsSync
+var Builder = require('component-builder')
+
+program
+  .usage('<component>')
+  .option('-o, --out <dir>', 'Output directory')
+  .option('-n, --name <file>', 'Base name for output files', 'build')
+  .option('-d, --development', 'Build development dependencies')
+  .parse(process.argv)
+
+var lib = join(__dirname, '../lib')
+
+program.out = program.out ? Path.resolve(program.out) : 'build'
+
+var name = program.args[0]
+if (name) {
+  var dir = join(lib, name)
+  if (!exists(dir)) {
+    console.error('Component ' + name + ' not found')
+    process.exit(1)
+  }
+  process.chdir(dir)
+}
+
+function path (type) {
+  return join(program.out, program.name + '.' + type)
+}
+
+var builder = new Builder('.')
+
+builder.addLookup(join(__dirname, '../components'))
+builder.addLookup(lib)
+
+builder.copyAssetsTo(program.out)
+
+if (program.dev) builder.development()
+
+builder.addSourceURLs()
+
+builder.build(function (err, obj) {
+  if (err) throw err
+
+  mkdir(program.out)
+
+  var hasJs = !!obj.js.trim()
+
+  if (hasJs) write(path('js'), obj.require + '\n' + obj.js)
+
+  if (obj.css) write(path('css'), obj.css)
+})

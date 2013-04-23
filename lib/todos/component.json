@@ -1,6 +1,21 @@
 {
   "name": "todos",
-  "styles": ["todos.css"],
-  "images": ["bg.png"],
-  "files": ["index.html"]
+  "dependencies": {
+    "eldargab/dom": "*"
+  },
+  "local": [
+    "uid"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "todos.css"
+  ],
+  "images": [
+    "bg.png"
+  ],
+  "files": [
+    "index.html"
+  ]
 }

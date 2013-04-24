@@ -1,0 +1,9 @@
+{
+  "name": "stream",
+  "local": [
+    "uid"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

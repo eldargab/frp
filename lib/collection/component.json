@@ -1,0 +1,9 @@
+{
+  "name": "collection",
+  "local": [
+    "stream"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

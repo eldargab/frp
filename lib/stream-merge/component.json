@@ -1,0 +1,9 @@
+{
+  "name": "stream-merge",
+  "local": [
+    "stream"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

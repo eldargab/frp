@@ -1,7 +1,4 @@
-var event = require('event')
-var classes = require('classes')
 var domify = require('domify')
-var css = require('css')
 
 module.exports = dom
 
@@ -11,9 +8,13 @@ function dom (html, ctx) {
     : (ctx || document).querySelector(html)
 }
 
-dom.on = event.bind
+dom.on = function(el, type, fn, capture) {
+  el.addEventListener(type, fn, capture || false)
+}
 
-dom.off = event.unbind
+dom.off = function(el, type, fn, capture) {
+  el.removeEventListener(type, fn, capture || false)
+}
 
 dom.firstChild = function (el) {
   var child = el.firstChild
@@ -51,24 +52,24 @@ dom.map = function (sel, ctx, fn, that) {
 
 
 dom.addClass = function (cl, el) {
-  el.classList
-    ? el.classList.add(cl)
-    : classes(el).add(cl)
+  el.classList.add(cl)
 }
 
 dom.removeClass = function (cl, el) {
-  el.classList
-    ? el.classList.remove(cl)
-    : classes(el).remove(cl)
+  el.classList.remove(cl)
 }
 
 dom.hasClass = function (cl, el) {
-  return el.classList
-    ? el.classList.contains(cl)
-    : classes(el).has(cl)
+  return el.classList.contains(cl)
 }
 
-dom.css = css
+dom.toggle = function(cl, on, el) {
+  if (on) {
+    el.classList.add(cl)
+  } else {
+    el.classList.remove(cl)
+  }
+}
 
 dom.remove = function (el) {
   var parent = el.parentNode

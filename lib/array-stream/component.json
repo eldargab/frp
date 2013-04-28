@@ -1,0 +1,9 @@
+{
+  "name": "array-stream",
+  "local": [
+    "stream"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

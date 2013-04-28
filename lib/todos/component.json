@@ -1,19 +1,25 @@
 {
   "name": "todos",
   "dependencies": {
-    "eldargab/dom": "*"
+    "eldargab/dom": "*",
+    "component/clone": "*"
   },
   "local": [
-    "uid"
+    "elements",
+    "collection",
+    "stream",
+    "stream-merge",
+    "array-stream"
   ],
   "scripts": [
-    "index.js"
+    "index.js",
+    "header.js",
+    "storage.js",
+    "todo-item.js",
+    "todo-list.js"
   ],
   "styles": [
     "todos.css"
-  ],
-  "images": [
-    "bg.png"
   ],
   "files": [
     "index.html"

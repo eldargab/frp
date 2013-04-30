@@ -1,9 +1,0 @@
-{
-  "name": "elements",
-  "local": [
-    "stream"
-  ],
-  "scripts": [
-    "index.js"
-  ]
-}

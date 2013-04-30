@@ -5,7 +5,6 @@
     "component/clone": "*"
   },
   "local": [
-    "elements",
     "collection",
     "stream",
     "stream-merge",

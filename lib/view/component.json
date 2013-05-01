@@ -2,11 +2,12 @@
   "name": "view",
   "dependencies": {
     "eldargab/dom": "*",
-    "component/value": "*",
     "eldargab/mix": "*"
-  }
+  },
+  "local": [
+    "value"
+  ],
   "scripts": [
-    "array-binding.js",
     "bindings.js",
     "filters.js",
     "index.js"

@@ -1,14 +1,15 @@
 {
   "name": "todos",
   "dependencies": {
-    "eldargab/dom": "*",
-    "component/clone": "*"
+    "component/clone": "*",
+    "eldargab/dom": "*"
   },
   "local": [
     "collection",
     "stream",
     "stream-merge",
-    "array-stream"
+    "array-stream",
+    "view"
   ],
   "scripts": [
     "index.js",

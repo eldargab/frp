@@ -9,45 +9,38 @@
 <body>
   <section id="todoapp">
 
-    <header id="header">
+    <header id="header", data-view="header">
       <h1>todos</h1>
       <input id="new-todo" placeholder="What needs to be done?" autofocus>
     </header>
 
     <!-- This section should be hidden by default and shown when there are todos -->
-    <section id="main">
-      <input id="toggle-all" type="checkbox">
+    <section id="main" data-bind="css-hidden|not:count">
+      <input id="toggle-all" type="checkbox" data-bind="event-click|value:toggleAll, value|not:left">
       <label for="toggle-all">Mark all as complete</label>
 
-      <ul id="todo-list">
-        <!-- These are here just to show the structure of the list items -->
+      <ul id="todo-list" data-view="todos">
         <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
-        <li class="completed">
+        <li data-bind="css-editing:editing, css-completed:completed, event-dblclick:enterEditMode">
           <div class="view">
-            <input class="toggle" type="checkbox" checked>
-            <label>Create a TodoMVC template</label>
-            <button class="destroy"></button>
+            <input class="toggle" type="checkbox" data-bind="value:completed, event-click|value:toggle">
+            <label data-bind="text:text">Item text</label>
+            <button class="destroy" data-bind="event-click:del"></button>
           </div>
-          <input class="edit" value="Create a TodoMVC template">
-        </li>
-
-        <li>
-          <div class="view">
-            <input class="toggle" type="checkbox">
-            <label>Rule the web</label>
-            <button class="destroy"></button>
-          </div>
-          <input class="edit" value="Rule the web">
+          <input class="edit"
+            data-bind="value:inputText, focus:editing, event-keypress|enter|value:updateText, event-blur:exitEditMode">
         </li>
       </ul>
     </section>
 
     <!-- This footer should hidden by default and shown when there are todos -->
-    <footer id="footer">
+    <footer id="footer" data-bind="css-hidden|not:count">
       <!-- This should be `0 items left` by default -->
-      <span id="todo-count"><strong>1</strong> item left</span>
+      <span id="todo-count" data-bind="html|left:left"><strong>1</strong> item left</span>
       <!-- Hidden if no completed items are left ↓ -->
-      <button id="clear-completed">Clear completed (1)</button>
+      <button id="clear-completed" data-bind="css-hidden|not:completed, text|completed:completed, event-click:clearCompleted">
+        Clear completed (1)
+      </button>
     </footer>
   </section>
 

@@ -1,5 +1,8 @@
 {
   "name": "stream",
+  "dependencies": {
+    "eldargab/mix": "*"
+  },
   "scripts": [
     "index.js"
   ]

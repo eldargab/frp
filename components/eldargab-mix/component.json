@@ -1,0 +1,17 @@
+{
+  "name": "mix",
+  "version": "1.0.0",
+  "description": "Merge/mix util for objects",
+  "repo": "eldargab/mix",
+  "keywords": [
+    "object",
+    "util",
+    "mixin",
+    "merge",
+    "extend"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT"
+}

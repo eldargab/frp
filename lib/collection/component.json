@@ -1,5 +1,8 @@
 {
   "name": "collection",
+  "dependencies": {
+    "eldargab/mix": "*"
+  },
   "local": [
     "stream"
   ],

@@ -5,7 +5,8 @@
     "eldargab/mix": "*"
   },
   "local": [
-    "value"
+    "value",
+    "stream"
   ],
   "scripts": [
     "bindings.js",

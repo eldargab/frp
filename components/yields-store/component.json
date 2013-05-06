@@ -1,0 +1,20 @@
+{
+  "name": "store",
+  "repo": "yields/store",
+  "description": "store.",
+  "version": "0.1.0",
+  "keywords": [
+    "store",
+    "localstorage"
+  ],
+  "dependencies": {
+    "yields/unserialize": "*"
+  },
+  "development": {
+    "visionmedia/mocha": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

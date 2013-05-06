@@ -1,5 +1,8 @@
 {
-  "name": "array-stream",
+  "name": "actor",
+  "dependencies": {
+    "eldargab/mix": "*"
+  },
   "local": [
     "stream"
   ],

@@ -1,5 +1,5 @@
 {
-  "name": "collection",
+  "name": "stream-transform",
   "dependencies": {
     "eldargab/mix": "*"
   },
